@@ -1140,11 +1140,11 @@ local att6 = gp(handle6, "att1_Handle", "Attachment")
 att6.Parent = swpart
 
 --Slasher
---att6.Position = Vector3.new(-2.2, -0, 0)
---att6.Rotation = Vector3.new(0, -0, -45)
+att6.Position = Vector3.new(-2.2, -0, 0)
+att6.Rotation = Vector3.new(0, -0, -45)
 --samurai
-att6.Position = Vector3.new(-2.9, -0.2, 0)
-att6.Rotation = Vector3.new(0, -90, 0)
+--att6.Position = Vector3.new(-2.9, -0.2, 0)
+--att6.Rotation = Vector3.new(0, -90, 0)
 
 
 
@@ -1676,27 +1676,30 @@ onhold = false
 end)
 
 uis.InputBegan:Connect(function(input)
-if input.KeyCode == Enum.KeyCode.F then
+if input.KeyCode == Enum.KeyCode.F and doskill == false then
 spinnyblade()
 elseif input.KeyCode == Enum.KeyCode.E and doskill == false then
 powerup()
 elseif input.KeyCode == Enum.KeyCode.Z and doskill == false then
 leap()
-elseif input.KeyCode == Enum.KeyCode.Z and doskill == true then
-superleap()
 elseif input.KeyCode == Enum.KeyCode.X and doskill == false then
 superjump()
-elseif input.KeyCode == Enum.KeyCode.X and altskill == true and skilltype == 1 then
-spinup()
 elseif input.KeyCode == Enum.KeyCode.G and doskill == false then
 swoosh()
 elseif input.KeyCode == Enum.KeyCode.V and doskill == false then
 spinnyblade2()
 elseif input.KeyCode == Enum.KeyCode.C and doskill == false then
 slashup()
+end
+end)
+
+uis.InputBegan:Connect(function(input)
+elseif input.KeyCode == Enum.KeyCode.Z and doskill == true then
+superleap()
+elseif input.KeyCode == Enum.KeyCode.X and altskill == true and skilltype == 1 then
+spinup()
 elseif input.KeyCode == Enum.KeyCode.C and doskill == true then
 superslashup()
-end
 end)
 
 while event:Wait(0.1) do
