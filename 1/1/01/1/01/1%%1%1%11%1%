@@ -1700,6 +1700,7 @@ elseif input.KeyCode == Enum.KeyCode.X and altskill == true and skilltype == 1 t
 spinup()
 elseif input.KeyCode == Enum.KeyCode.C and doskill == true then
 superslashup()
+end
 end)
 
 while event:Wait(0.1) do
