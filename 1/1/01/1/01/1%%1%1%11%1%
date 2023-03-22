@@ -1694,7 +1694,7 @@ end
 end)
 
 uis.InputBegan:Connect(function(input)
-elseif input.KeyCode == Enum.KeyCode.Z and doskill == true then
+if input.KeyCode == Enum.KeyCode.Z and doskill == true then
 superleap()
 elseif input.KeyCode == Enum.KeyCode.X and altskill == true and skilltype == 1 then
 spinup()
